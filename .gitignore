@@ -1,0 +1,31 @@
+# 运行时会话（绝不上传）
+session.json
+*.session.json
+
+# 飞书本地 stub 数据
+.fehsu_stub/
+.feishu_stub/
+
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+
+# Node 依赖
+node_modules/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 用户配置（绝不上传——包含个人身份信息）
+users/*/
+!users/_template/
+
+# 运行时产物
+runs/
+*.log
+
+# 测试临时
+/tmp/
+*.tmp
