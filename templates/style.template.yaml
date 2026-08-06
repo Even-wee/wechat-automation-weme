@@ -1,0 +1,72 @@
+# ============================================================
+# 模板 3/5 · style.template.yaml —— 视觉与语言风格（必填）
+# ------------------------------------------------------------
+# 这份文件决定：
+#   1. 排版主题（步骤⑧ layout 读）—— 文章长什么样
+#   2. AI 配图风格（步骤⑦ image_gen 读）—— 图片什么调性
+#   3. 语言风格（写作时参考）—— 文章什么语气
+#
+# 填不满意的可以先留默认值，跑几篇后再回来微调。
+# ============================================================
+
+# ===== 1. 排版主题 =====
+layout:
+  theme: "warm-editorial"   # 18 套可选：warm-editorial / professional-clean
+                            #   / elegant-rose / moyu-green / bold-green
+                            #   / bold-navy / bauhaus / github / impeccable
+                            #   / ink / lobster-notes / midnight / minimal
+                            #   / minimal-gold / newspaper / sspai / tech-modern
+                            #   / bytedance / focus-red / elegant-rose
+  cta_style:                # 文末 CTA 卡片样式（可选）
+    bg: "#F6F0E3"
+    text: "#5E564C"
+    border: "1px dashed #B9AE9B"
+    radius: 16
+    padding: "32px 40px"
+
+# ===== 2. 视觉配色（封面/配图的主色调，可选）=====
+visual:
+  primary_color: "#F6F0E3"      # 主色（背景）
+  accent_color: "#6D7F45"       # 强调色（标题/点缀）
+  secondary_color: "#C98752"    # 辅助色（次级元素）
+  text_color: "#3E372E"         # 文字色
+
+# ===== 3. AI 配图风格（image_gen 读，决定图片调性）=====
+image_style:
+  # 英文描述你的配图风格，AI 出图时会作为统一前缀
+  # 例：Warm minimalist editorial illustration, muted earth tones
+  #      (terracotta, sage green, cream), soft golden-hour lighting
+  prompt_prefix: "Warm minimalist editorial illustration, muted earth tones (terracotta, sage green, cream), soft golden-hour lighting, clean vector-like illustration style, no text, no logos"
+  cover_size: "1175x500"    # 封面尺寸
+  inline_size: "1024x1024"  # 配图尺寸
+  images_per_article: 3     # 每篇配图数
+
+# ===== 4. 语言风格（写作时参考）=====
+language:
+  tone: "一句话描述你的语气"       # 例：温柔但骨架硬，不说教不卖惨不夸张
+  target_chars: 1800            # 目标字数
+  min_chars: 1200               # 最小时长
+  max_chars: 2500               # 最大字数
+  article_types:                # 你常写的文章类型
+    - "类型 1"                   # 例：干货方法型
+    - "类型 2"                   # 例：情感成长型
+    - "类型 3"                   # 例：时事政策型
+  structure:                    # 文章结构骨架（顺序）
+    - "标题钩子"
+    - "白话解释"
+    - "观点金句"
+    - "实操动作"
+    - "情感升华/CTA"
+  forbidden_words:              # 你的账号绝不用的词
+    - "yyds"
+    - "绝绝子"
+    - "家人们"
+  emoji:                        # 允许/禁止的 emoji
+    allowed: ["✨", "🌾", "❤️"]
+    max_per_article: 5
+    forbidden: ["😱", "🔥", "💯"]
+
+# ===== 5. 标签 =====
+hashtags:
+  count: 5                      # 每篇标签数
+  formula: "主题 + 赛道大词 + 细分场景 + 行动方法 + 情感价值"
