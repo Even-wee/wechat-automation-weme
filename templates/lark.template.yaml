@@ -1,0 +1,56 @@
+# ============================================================
+# 模板 5/5 · lark.template.yaml —— 飞书配置（可选，不填也能跑）
+# ------------------------------------------------------------
+# 这份文件决定：
+#   1. 选题 Top20 推送到哪个飞书表格
+#   2. 发布记录写到哪个内容库
+#   3. 通知消息发到哪个用户/群
+#
+# 不填的话，流程会走本地 stub（数据落 .feishu_stub/），
+# 流程能跑通但不推送飞书。要接飞书的话填下面 4 项。
+# ============================================================
+
+# ===== 1. 飞书开关 =====
+lark:
+  enabled: false          # true 启用飞书 / false 用本地 stub
+  use_bot: true           # 是否用机器人发通知
+
+# ===== 2. 应用凭证（飞书开放平台创建应用后填）=====
+app:
+  app_id: ""              # 飞书应用 App ID
+  app_secret: ""          # 飞书应用 App Secret
+
+# ===== 3. 选题表（步骤① Top20 推送目标）=====
+topics_base:
+  app_token: ""           # 多维表格 Base token
+  table_id: ""            # 选题表 table id
+  fields:                 # 字段名映射（按你的表实际字段改）
+    date: "日期"
+    rank: "排名"
+    title: "标题"
+    source: "来源"
+    score: "总分"
+    track_match: "赛道匹配度"
+    keywords: "关键词"
+    status: "状态"
+
+# ===== 4. 内容发布库（步骤⑨ 发布记录写入）=====
+contents_base:
+  app_token: ""           # 内容库 Base token
+  table_id: ""            # 内容表 table id
+  fields:
+    date: "发布日期"
+    title: "标题"
+    digest: "摘要"
+    author: "作者"
+    word_count: "字数"
+    cover_url: "封面URL"
+    draft_url: "草稿URL"
+    tags: "标签"
+
+# ===== 5. 通知（可选）=====
+notify:
+  open_id: ""             # 接收通知的用户 open_id
+  topic_digest: "📌 {date} 选题 Top 20｜{track_name}"
+  publish_success: "✅ {date} 草稿已生成｜{title}"
+  publish_failure: "❌ 草稿生成失败｜{error}"
